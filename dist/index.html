@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin BattleShip Game</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <dialog id="dialog" aria-labelledby="dialog-heading">
+      <div class="dialog-data">
+        <div>
+          <h2 id="dialog-heading">Game Ended</h2>
+          <button class="close">X</button>
+        </div>
+        <p id="dialog-body"></p>
+        <button class="close">Close</button>
+      </div>
+    </dialog>
+    <main>
+      <h1>BattleShip Game</h1>
+      <div class="alert">
+        <p id="alert-text">Place Your Ships. Press R to Rotate(and move)</p>
+      </div>
+
+      <section class="game">
+        <div class="card" id="player-card">
+          <h2>Player Board</h2>
+          <div class="board" id="player-board">
+            <div class="input" id="player-00" data-row="0" data-col="0"></div>
+            <div class="input" id="player-01" data-row="0" data-col="1"></div>
+            <div class="input" id="player-02" data-row="0" data-col="2"></div>
+            <div class="input" id="player-03" data-row="0" data-col="3"></div>
+            <div class="input" id="player-04" data-row="0" data-col="4"></div>
+            <div class="input" id="player-05" data-row="0" data-col="5"></div>
+            <div class="input" id="player-06" data-row="0" data-col="6"></div>
+            <div class="input" id="player-07" data-row="0" data-col="7"></div>
+            <div class="input" id="player-08" data-row="0" data-col="8"></div>
+            <div class="input" id="player-09" data-row="0" data-col="9"></div>
+            <div class="input" id="player-10" data-row="1" data-col="0"></div>
+            <div class="input" id="player-11" data-row="1" data-col="1"></div>
+            <div class="input" id="player-12" data-row="1" data-col="2"></div>
+            <div class="input" id="player-13" data-row="1" data-col="3"></div>
+            <div class="input" id="player-14" data-row="1" data-col="4"></div>
+            <div class="input" id="player-15" data-row="1" data-col="5"></div>
+            <div class="input" id="player-16" data-row="1" data-col="6"></div>
+            <div class="input" id="player-17" data-row="1" data-col="7"></div>
+            <div class="input" id="player-18" data-row="1" data-col="8"></div>
+            <div class="input" id="player-19" data-row="1" data-col="9"></div>
+            <div class="input" id="player-20" data-row="2" data-col="0"></div>
+            <div class="input" id="player-21" data-row="2" data-col="1"></div>
+            <div class="input" id="player-22" data-row="2" data-col="2"></div>
+            <div class="input" id="player-23" data-row="2" data-col="3"></div>
+            <div class="input" id="player-24" data-row="2" data-col="4"></div>
+            <div class="input" id="player-25" data-row="2" data-col="5"></div>
+            <div class="input" id="player-26" data-row="2" data-col="6"></div>
+            <div class="input" id="player-27" data-row="2" data-col="7"></div>
+            <div class="input" id="player-28" data-row="2" data-col="8"></div>
+            <div class="input" id="player-29" data-row="2" data-col="9"></div>
+            <div class="input" id="player-30" data-row="3" data-col="0"></div>
+            <div class="input" id="player-31" data-row="3" data-col="1"></div>
+            <div class="input" id="player-32" data-row="3" data-col="2"></div>
+            <div class="input" id="player-33" data-row="3" data-col="3"></div>
+            <div class="input" id="player-34" data-row="3" data-col="4"></div>
+            <div class="input" id="player-35" data-row="3" data-col="5"></div>
+            <div class="input" id="player-36" data-row="3" data-col="6"></div>
+            <div class="input" id="player-37" data-row="3" data-col="7"></div>
+            <div class="input" id="player-38" data-row="3" data-col="8"></div>
+            <div class="input" id="player-39" data-row="3" data-col="9"></div>
+            <div class="input" id="player-40" data-row="4" data-col="0"></div>
+            <div class="input" id="player-41" data-row="4" data-col="1"></div>
+            <div class="input" id="player-42" data-row="4" data-col="2"></div>
+            <div class="input" id="player-43" data-row="4" data-col="3"></div>
+            <div class="input" id="player-44" data-row="4" data-col="4"></div>
+            <div class="input" id="player-45" data-row="4" data-col="5"></div>
+            <div class="input" id="player-46" data-row="4" data-col="6"></div>
+            <div class="input" id="player-47" data-row="4" data-col="7"></div>
+            <div class="input" id="player-48" data-row="4" data-col="8"></div>
+            <div class="input" id="player-49" data-row="4" data-col="9"></div>
+            <div class="input" id="player-50" data-row="5" data-col="0"></div>
+            <div class="input" id="player-51" data-row="5" data-col="1"></div>
+            <div class="input" id="player-52" data-row="5" data-col="2"></div>
+            <div class="input" id="player-53" data-row="5" data-col="3"></div>
+            <div class="input" id="player-54" data-row="5" data-col="4"></div>
+            <div class="input" id="player-55" data-row="5" data-col="5"></div>
+            <div class="input" id="player-56" data-row="5" data-col="6"></div>
+            <div class="input" id="player-57" data-row="5" data-col="7"></div>
+            <div class="input" id="player-58" data-row="5" data-col="8"></div>
+            <div class="input" id="player-59" data-row="5" data-col="9"></div>
+            <div class="input" id="player-60" data-row="6" data-col="0"></div>
+            <div class="input" id="player-61" data-row="6" data-col="1"></div>
+            <div class="input" id="player-62" data-row="6" data-col="2"></div>
+            <div class="input" id="player-63" data-row="6" data-col="3"></div>
+            <div class="input" id="player-64" data-row="6" data-col="4"></div>
+            <div class="input" id="player-65" data-row="6" data-col="5"></div>
+            <div class="input" id="player-66" data-row="6" data-col="6"></div>
+            <div class="input" id="player-67" data-row="6" data-col="7"></div>
+            <div class="input" id="player-68" data-row="6" data-col="8"></div>
+            <div class="input" id="player-69" data-row="6" data-col="9"></div>
+            <div class="input" id="player-70" data-row="7" data-col="0"></div>
+            <div class="input" id="player-71" data-row="7" data-col="1"></div>
+            <div class="input" id="player-72" data-row="7" data-col="2"></div>
+            <div class="input" id="player-73" data-row="7" data-col="3"></div>
+            <div class="input" id="player-74" data-row="7" data-col="4"></div>
+            <div class="input" id="player-75" data-row="7" data-col="5"></div>
+            <div class="input" id="player-76" data-row="7" data-col="6"></div>
+            <div class="input" id="player-77" data-row="7" data-col="7"></div>
+            <div class="input" id="player-78" data-row="7" data-col="8"></div>
+            <div class="input" id="player-79" data-row="7" data-col="9"></div>
+            <div class="input" id="player-80" data-row="8" data-col="0"></div>
+            <div class="input" id="player-81" data-row="8" data-col="1"></div>
+            <div class="input" id="player-82" data-row="8" data-col="2"></div>
+            <div class="input" id="player-83" data-row="8" data-col="3"></div>
+            <div class="input" id="player-84" data-row="8" data-col="4"></div>
+            <div class="input" id="player-85" data-row="8" data-col="5"></div>
+            <div class="input" id="player-86" data-row="8" data-col="6"></div>
+            <div class="input" id="player-87" data-row="8" data-col="7"></div>
+            <div class="input" id="player-88" data-row="8" data-col="8"></div>
+            <div class="input" id="player-89" data-row="8" data-col="9"></div>
+            <div class="input" id="player-90" data-row="9" data-col="0"></div>
+            <div class="input" id="player-91" data-row="9" data-col="1"></div>
+            <div class="input" id="player-92" data-row="9" data-col="2"></div>
+            <div class="input" id="player-93" data-row="9" data-col="3"></div>
+            <div class="input" id="player-94" data-row="9" data-col="4"></div>
+            <div class="input" id="player-95" data-row="9" data-col="5"></div>
+            <div class="input" id="player-96" data-row="9" data-col="6"></div>
+            <div class="input" id="player-97" data-row="9" data-col="7"></div>
+            <div class="input" id="player-98" data-row="9" data-col="8"></div>
+            <div class="input" id="player-99" data-row="9" data-col="9"></div>
+          </div>
+        </div>
+        <div class="card" id="computer-card">
+          <h2>Computer Board</h2>
+          <div class="board" id="computer-board">
+            <div class="input" id="computer-00" data-row="0" data-col="0"></div>
+            <div class="input" id="computer-01" data-row="0" data-col="1"></div>
+            <div class="input" id="computer-02" data-row="0" data-col="2"></div>
+            <div class="input" id="computer-03" data-row="0" data-col="3"></div>
+            <div class="input" id="computer-04" data-row="0" data-col="4"></div>
+            <div class="input" id="computer-05" data-row="0" data-col="5"></div>
+            <div class="input" id="computer-06" data-row="0" data-col="6"></div>
+            <div class="input" id="computer-07" data-row="0" data-col="7"></div>
+            <div class="input" id="computer-08" data-row="0" data-col="8"></div>
+            <div class="input" id="computer-09" data-row="0" data-col="9"></div>
+            <div class="input" id="computer-10" data-row="1" data-col="0"></div>
+            <div class="input" id="computer-11" data-row="1" data-col="1"></div>
+            <div class="input" id="computer-12" data-row="1" data-col="2"></div>
+            <div class="input" id="computer-13" data-row="1" data-col="3"></div>
+            <div class="input" id="computer-14" data-row="1" data-col="4"></div>
+            <div class="input" id="computer-15" data-row="1" data-col="5"></div>
+            <div class="input" id="computer-16" data-row="1" data-col="6"></div>
+            <div class="input" id="computer-17" data-row="1" data-col="7"></div>
+            <div class="input" id="computer-18" data-row="1" data-col="8"></div>
+            <div class="input" id="computer-19" data-row="1" data-col="9"></div>
+            <div class="input" id="computer-20" data-row="2" data-col="0"></div>
+            <div class="input" id="computer-21" data-row="2" data-col="1"></div>
+            <div class="input" id="computer-22" data-row="2" data-col="2"></div>
+            <div class="input" id="computer-23" data-row="2" data-col="3"></div>
+            <div class="input" id="computer-24" data-row="2" data-col="4"></div>
+            <div class="input" id="computer-25" data-row="2" data-col="5"></div>
+            <div class="input" id="computer-26" data-row="2" data-col="6"></div>
+            <div class="input" id="computer-27" data-row="2" data-col="7"></div>
+            <div class="input" id="computer-28" data-row="2" data-col="8"></div>
+            <div class="input" id="computer-29" data-row="2" data-col="9"></div>
+            <div class="input" id="computer-30" data-row="3" data-col="0"></div>
+            <div class="input" id="computer-31" data-row="3" data-col="1"></div>
+            <div class="input" id="computer-32" data-row="3" data-col="2"></div>
+            <div class="input" id="computer-33" data-row="3" data-col="3"></div>
+            <div class="input" id="computer-34" data-row="3" data-col="4"></div>
+            <div class="input" id="computer-35" data-row="3" data-col="5"></div>
+            <div class="input" id="computer-36" data-row="3" data-col="6"></div>
+            <div class="input" id="computer-37" data-row="3" data-col="7"></div>
+            <div class="input" id="computer-38" data-row="3" data-col="8"></div>
+            <div class="input" id="computer-39" data-row="3" data-col="9"></div>
+            <div class="input" id="computer-40" data-row="4" data-col="0"></div>
+            <div class="input" id="computer-41" data-row="4" data-col="1"></div>
+            <div class="input" id="computer-42" data-row="4" data-col="2"></div>
+            <div class="input" id="computer-43" data-row="4" data-col="3"></div>
+            <div class="input" id="computer-44" data-row="4" data-col="4"></div>
+            <div class="input" id="computer-45" data-row="4" data-col="5"></div>
+            <div class="input" id="computer-46" data-row="4" data-col="6"></div>
+            <div class="input" id="computer-47" data-row="4" data-col="7"></div>
+            <div class="input" id="computer-48" data-row="4" data-col="8"></div>
+            <div class="input" id="computer-49" data-row="4" data-col="9"></div>
+            <div class="input" id="computer-50" data-row="5" data-col="0"></div>
+            <div class="input" id="computer-51" data-row="5" data-col="1"></div>
+            <div class="input" id="computer-52" data-row="5" data-col="2"></div>
+            <div class="input" id="computer-53" data-row="5" data-col="3"></div>
+            <div class="input" id="computer-54" data-row="5" data-col="4"></div>
+            <div class="input" id="computer-55" data-row="5" data-col="5"></div>
+            <div class="input" id="computer-56" data-row="5" data-col="6"></div>
+            <div class="input" id="computer-57" data-row="5" data-col="7"></div>
+            <div class="input" id="computer-58" data-row="5" data-col="8"></div>
+            <div class="input" id="computer-59" data-row="5" data-col="9"></div>
+            <div class="input" id="computer-60" data-row="6" data-col="0"></div>
+            <div class="input" id="computer-61" data-row="6" data-col="1"></div>
+            <div class="input" id="computer-62" data-row="6" data-col="2"></div>
+            <div class="input" id="computer-63" data-row="6" data-col="3"></div>
+            <div class="input" id="computer-64" data-row="6" data-col="4"></div>
+            <div class="input" id="computer-65" data-row="6" data-col="5"></div>
+            <div class="input" id="computer-66" data-row="6" data-col="6"></div>
+            <div class="input" id="computer-67" data-row="6" data-col="7"></div>
+            <div class="input" id="computer-68" data-row="6" data-col="8"></div>
+            <div class="input" id="computer-69" data-row="6" data-col="9"></div>
+            <div class="input" id="computer-70" data-row="7" data-col="0"></div>
+            <div class="input" id="computer-71" data-row="7" data-col="1"></div>
+            <div class="input" id="computer-72" data-row="7" data-col="2"></div>
+            <div class="input" id="computer-73" data-row="7" data-col="3"></div>
+            <div class="input" id="computer-74" data-row="7" data-col="4"></div>
+            <div class="input" id="computer-75" data-row="7" data-col="5"></div>
+            <div class="input" id="computer-76" data-row="7" data-col="6"></div>
+            <div class="input" id="computer-77" data-row="7" data-col="7"></div>
+            <div class="input" id="computer-78" data-row="7" data-col="8"></div>
+            <div class="input" id="computer-79" data-row="7" data-col="9"></div>
+            <div class="input" id="computer-80" data-row="8" data-col="0"></div>
+            <div class="input" id="computer-81" data-row="8" data-col="1"></div>
+            <div class="input" id="computer-82" data-row="8" data-col="2"></div>
+            <div class="input" id="computer-83" data-row="8" data-col="3"></div>
+            <div class="input" id="computer-84" data-row="8" data-col="4"></div>
+            <div class="input" id="computer-85" data-row="8" data-col="5"></div>
+            <div class="input" id="computer-86" data-row="8" data-col="6"></div>
+            <div class="input" id="computer-87" data-row="8" data-col="7"></div>
+            <div class="input" id="computer-88" data-row="8" data-col="8"></div>
+            <div class="input" id="computer-89" data-row="8" data-col="9"></div>
+            <div class="input" id="computer-90" data-row="9" data-col="0"></div>
+            <div class="input" id="computer-91" data-row="9" data-col="1"></div>
+            <div class="input" id="computer-92" data-row="9" data-col="2"></div>
+            <div class="input" id="computer-93" data-row="9" data-col="3"></div>
+            <div class="input" id="computer-94" data-row="9" data-col="4"></div>
+            <div class="input" id="computer-95" data-row="9" data-col="5"></div>
+            <div class="input" id="computer-96" data-row="9" data-col="6"></div>
+            <div class="input" id="computer-97" data-row="9" data-col="7"></div>
+            <div class="input" id="computer-98" data-row="9" data-col="8"></div>
+            <div class="input" id="computer-99" data-row="9" data-col="9"></div>
+          </div>
+        </div>
+      </section>
+      <div class="player-ships" id="ships">
+        <div data-cursor-size="5" id="carrier" class="cursor-changer">
+          <h3>Carrier</h3>
+          <div class="board-special">
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+          </div>
+        </div>
+
+        <div data-cursor-size="4" id="battleship" class="cursor-changer">
+          <h3>Battleship</h3>
+          <div class="board-special">
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+          </div>
+        </div>
+        <div data-cursor-size="3" id="cruiser" class="cursor-changer">
+          <h3>Cruiser</h3>
+          <div class="board-special">
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+          </div>
+        </div>
+        <div data-cursor-size="3" id="submarine" class="cursor-changer">
+          <h3>Submarine</h3>
+          <div class="board-special">
+            <div class="input"></div>
+            <div class="input"></div>
+            <div class="input"></div>
+          </div>
+        </div>
+
+        <div data-cursor-size="2" id="destroyer" class="cursor-changer">
+          <h3>Destroyer</h3>
+          <div class="board-special">
+            <div class="input"></div>
+            <div class="input"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.querySelectorAll(".board").forEach((x) => {
+        const children = Array.from(x.children);
+        children.forEach((x, i) => {
+          if (i % 10 === 0) x.style.borderLeft = "2px solid white";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ This project tackles building the classic Battleship game using the Test-Driven 
 ## Project Github Link
 
 - [Testing Basics Github Page](https://github.com/Ekott2006/odin-js-battleship)
+- 🔗 **Live preview:** [here](https://ekott2006.github.io/odin-js-battleship)
 
 ## Inspiration
 

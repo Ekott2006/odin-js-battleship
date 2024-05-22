@@ -1,0 +1,105 @@
+body {
+  color: white;
+  text-align: center;
+  background-color: rgb(26, 25, 25);
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main {
+  padding-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.alert {
+  padding: 10px;
+  background-color: #ffd70066;
+  border-radius: 10px;
+}
+.game {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  display: grid;
+  gap: 1rem;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: repeat(10, auto);
+  justify-content: center;
+}
+.board:last-child {
+  border-bottom: 2px solid white;
+}
+.input {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  width: 2rem;
+  height: 2rem;
+}
+.player-ships {
+  display: flex;
+  gap: 2.3rem;
+  justify-content: center;
+  margin: 1rem;
+}
+.player-ships > div {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.player-ships > div:hover {
+  background-color: rgb(17, 15, 15);
+}
+.player-ships .selected {
+  background: black;
+}
+.board-special {
+  display: flex;
+}
+.board-special .input {
+  border: 2px solid gold;
+}
+
+dialog {
+  background: black;
+  color: inherit;
+  border: none;
+  border-radius: 10px;
+  min-width: 25vw;
+}
+.dialog-data {
+  display: grid;
+  gap: 1rem;
+}
+.dialog-data > div {
+  display: flex;
+  justify-content: space-between;
+}
+dialog h2 {
+  font-weight: bold;
+}
+
+dialog button {
+  cursor: pointer;
+  background-color: #ffd70066;
+  border: 1px solid transparent;
+  color: inherit;
+  border-radius: 5px;
+  width: fit-content;
+  margin-left: auto;
+  padding: 5px 10px;
+}
+
+dialog button:hover {
+  background-color: #ffd900d2;
+  border-color: white;
+}
